@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Helvetica Neue", "Arial", "Roboto", "Open Sans", sans-serif;
+}
+
+@layer components {
+  .debug {
+    @apply border-2 border-white;
+  }
+
+  .horizontal {
+    @apply flex flex-row;
+  }
+
+  .vertical {
+    @apply flex flex-col;
+  }
+
+  .horizontal.center-v {
+    @apply items-center;
+  }
+
+  .horizontal.center-h {
+    @apply justify-center;
+  }
+
+  .horizontal.center {
+    @apply justify-center items-center;
+  }
+
+  .vertical.center-v {
+    @apply justify-center;
+  }
+
+  .vertical.center-h {
+    @apply items-center;
+  }
+
+  .vertical.center {
+    @apply justify-center items-center;
+  }
+
+  .space-between {
+    @apply justify-between;
+  }
+}
