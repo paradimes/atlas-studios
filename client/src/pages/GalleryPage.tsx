@@ -3,16 +3,29 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { galleryArray } from "../resources";
 
+type selectedImageObjectType = {
+  title: string;
+  description: string;
+  photographer: string;
+  img: string;
+};
+
 export default function GalleryPage() {
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  // const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageObject, setSelectedImageObject] =
+    useState<selectedImageObjectType | null>(null);
 
-  const openLightbox = (imageSrc: string) => {
-    setSelectedImage(imageSrc);
+  const openLightbox = (item: selectedImageObjectType) => {
+    // setSelectedImage(imageSrc);
+    setSelectedImageObject(item);
     setIsLightboxOpen(true);
   };
 
+  console.log(selectedImageObject);
+
   const closeLightbox = () => {
+    setSelectedImageObject(null);
     setIsLightboxOpen(false);
   };
 
@@ -29,18 +42,11 @@ export default function GalleryPage() {
           className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         >
           {galleryArray.map((item, index) => (
-            // <GalleryCard
-            //   key={index}
-            //   title={item.title}
-            //   description={item.description}
-            //   photographer={item.photographer}
-            //   img={item.img}
-            // />
             <div
               key={index}
               className="relative group h-64 bg-gray-300 bg-cover bg-center cursor-pointer"
               style={{ backgroundImage: `url(${item.img})` }}
-              onClick={() => openLightbox(item.img)}
+              onClick={() => openLightbox(item)}
             >
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex flex-col justify-end overflow-hidden">
                 <span
@@ -54,16 +60,21 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {isLightboxOpen && selectedImage && (
+        {isLightboxOpen && selectedImageObject && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center p-4"
+            id="lightbox"
+            className="fixed inset-0 bg-black bg-opacity-80 flex flex-col xl:flex-row justify-center items-center gap-5 p-10 "
             onClick={closeLightbox}
           >
             <img
-              src={selectedImage}
-              alt="Enlarged"
-              className="max-w-full max-h-full"
+              src={selectedImageObject.img}
+              alt={selectedImageObject.title}
+              className="max-w-full max-h-[70vh] mx-auto"
             />
+            <div className="text-left mt-4">
+              <h2 className="text-xl font-bold">{selectedImageObject.title}</h2>
+              <p className="mt-2">{selectedImageObject.description}</p>
+            </div>
           </div>
         )}
       </div>
