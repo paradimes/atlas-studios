@@ -1,25 +1,20 @@
 import reindeer from "../assets/images/Reindeer_Katie_Orlinsky_Saturation.png";
+import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   return (
     <div
       id="page-container"
-      className="bg-black text-white min-h-screen break-words "
+      className="bg-black text-white min-h-screen break-words w-full"
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[208px] leading-none font-bold">Atlas/Studios</h1>
-        <nav className="mt-5 flex flex-row justify-between">
-          <span className="text-orange-500">HOME</span>
-          <span>GALLERY</span>
-          <span>ABOUT</span>
-          <span>SERVICES</span>
-          <span>CONTACT</span>
-        </nav>
+        <NavBar />
         <section
           id="heading-and-body"
           className="mt-[70px] flex flex-row gap-20"
         >
-          <p className="w-[50vw] italic">
+          <p className="w-[50vw] italic mt-auto">
             At Atlas, we believe in more than just capturing images; we believe
             in creating a portal to the wonders that thrive in the hidden
             corners of the Earth. Our team of world-renowned photographers
