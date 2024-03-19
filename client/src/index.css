@@ -13,6 +13,10 @@ body {
     @apply border-2 border-white;
   }
 
+  .debug-red {
+    @apply border-2 border-red-500;
+  }
+
   .horizontal {
     @apply flex flex-row;
   }
