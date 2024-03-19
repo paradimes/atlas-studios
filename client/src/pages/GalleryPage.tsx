@@ -104,8 +104,11 @@ export default function GalleryPage() {
                 {galleryArray[currentIndex].title}
               </h2>
               <p className="mt-2">{galleryArray[currentIndex].description}</p>
+              <p className="mt-2 italic font-extralight">
+                {galleryArray[currentIndex].photographer}
+              </p>
               <div
-                id="next-previous-buttons"
+                id="navigation-buttons"
                 className="flex items-center justify-center gap-5 mt-5"
               >
                 <button
