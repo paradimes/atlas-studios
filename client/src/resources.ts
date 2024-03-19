@@ -23,7 +23,7 @@ export const galleryArray = [
     img: spider,
   },
   {
-    title: "MOUNTAIN HAIRES",
+    title: "MOUNTAIN HARES",
     description:
       "Mountain hares in the Scottish Highlands have evolved to fit their surroundings—but as climate change ushers in varying weather, these animals stand out more often against a dark, snowless landscape, possibly leaving them vulnerable to predators.",
     photographer: "PHOTOGRAPH BY ANDY PARKINSON",
@@ -39,7 +39,7 @@ export const galleryArray = [
   {
     title: "DORYLUS MAYRI ANT",
     description:
-      "Inspired by his daughte's curiosity, photographer Eduard Florin Niga documented the tiny yet fascinating world of ants up close. With fossil records that indicate ants have been around for up to 168 million years, they're one of the planet's most abundant and successful animals, as seen in this Dorylus mayri ant from West Africa.",
+      "Inspired by his daughter's curiosity, photographer Eduard Florin Niga documented the tiny yet fascinating world of ants up close. With fossil records that indicate ants have been around for up to 168 million years, they're one of the planet's most abundant and successful animals, as seen in this Dorylus mayri ant from West Africa.",
     photographer: "PHOTOGRAPH BY EDUARD FLORIN NIGA",
     img: ant,
   },

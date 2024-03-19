@@ -3,30 +3,31 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { galleryArray } from "../resources";
 
-type selectedImageObjectType = {
-  title: string;
-  description: string;
-  photographer: string;
-  img: string;
-};
-
 export default function GalleryPage() {
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
-  // const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedImageObject, setSelectedImageObject] =
-    useState<selectedImageObjectType | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const openLightbox = (item: selectedImageObjectType) => {
-    // setSelectedImage(imageSrc);
-    setSelectedImageObject(item);
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
     setIsLightboxOpen(true);
   };
 
-  console.log(selectedImageObject);
-
   const closeLightbox = () => {
-    setSelectedImageObject(null);
+    setCurrentIndex(null);
     setIsLightboxOpen(false);
+  };
+
+  const handleNextButton = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    if (currentIndex !== null && currentIndex < galleryArray.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+  const handlePreviousButton = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    if (currentIndex !== null && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   return (
@@ -43,10 +44,11 @@ export default function GalleryPage() {
         >
           {galleryArray.map((item, index) => (
             <div
+              id="GalleryCard"
               key={index}
               className="relative group h-64 bg-gray-300 bg-cover bg-center cursor-pointer"
               style={{ backgroundImage: `url(${item.img})` }}
-              onClick={() => openLightbox(item)}
+              onClick={() => openLightbox(index)}
             >
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex flex-col justify-end overflow-hidden">
                 <span
@@ -60,20 +62,41 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {isLightboxOpen && selectedImageObject && (
+        {isLightboxOpen && currentIndex !== null && (
           <div
             id="lightbox"
-            className="fixed inset-0 bg-black bg-opacity-80 flex flex-col xl:flex-row justify-center items-center gap-5 p-10 "
+            className="fixed inset-0 bg-black bg-opacity-80 flex flex-col xl:flex-row justify-center items-center gap-5 p-10"
             onClick={closeLightbox}
           >
             <img
-              src={selectedImageObject.img}
-              alt={selectedImageObject.title}
+              src={galleryArray[currentIndex].img}
+              alt={galleryArray[currentIndex].title}
               className="max-w-full max-h-[70vh] mx-auto"
             />
-            <div className="text-left mt-4">
-              <h2 className="text-xl font-bold">{selectedImageObject.title}</h2>
-              <p className="mt-2">{selectedImageObject.description}</p>
+            <div className="text-left flex flex-col">
+              <h2 className="text-xl font-bold">
+                {galleryArray[currentIndex].title}
+              </h2>
+              <p className="mt-2">{galleryArray[currentIndex].description}</p>
+              <div
+                id="next-previous-buttons"
+                className="flex items-center justify-center gap-5 mt-5"
+              >
+                <button
+                  disabled={currentIndex <= 0}
+                  className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
+                  onClick={handlePreviousButton}
+                >
+                  Previous
+                </button>
+                <button
+                  disabled={currentIndex >= galleryArray.length - 1}
+                  className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
+                  onClick={handleNextButton}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         )}
