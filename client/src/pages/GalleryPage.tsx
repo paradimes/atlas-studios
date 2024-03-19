@@ -1,5 +1,5 @@
 // import GalleryCard from "../components/GalleryCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { galleryArray } from "../resources";
 
@@ -29,6 +29,32 @@ export default function GalleryPage() {
       setCurrentIndex(currentIndex - 1);
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isLightboxOpen) return;
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        if (currentIndex !== null && currentIndex < galleryArray.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        if (currentIndex !== null && currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        }
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        setIsLightboxOpen(false);
+        setCurrentIndex(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex, isLightboxOpen]);
 
   return (
     <div
