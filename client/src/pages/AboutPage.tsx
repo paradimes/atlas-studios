@@ -3,7 +3,8 @@ import everest from "../assets/aboutImages/everest.png";
 import foundingTeam from "../assets/aboutImages/foundingTeam.png";
 import future from "../assets/aboutImages/future.jpeg";
 import tokyo from "../assets/aboutImages/tokyo.jpeg";
-import topography from "../assets/topography.svg";
+import topography from "../assets/design/topography.svg";
+import jigsaw from "../assets/design/jigsaw.svg";
 
 export default function AboutPage() {
   return (
@@ -23,16 +24,14 @@ export default function AboutPage() {
         >
           {/* Overlay div, darkens the bg image and serves as the container to center the text */}
           <div className="absolute inset-0 flex items-center justify-center ">
-            <h1 className="text-white text-4xl md:text-6xl font-bold px-4 text-center">
-              Capturing The World Through Our Lenses - Join Us on Our Journey
+            <h1 className="text-white text-4xl md:text-5xl font-light px-4 text-center italic w-[40vw]">
+              "Seeing the world through a lens, I found my vision."
             </h1>
           </div>
         </div>
-        {/* Hero Section */}
-
         {/* Our Story Section */}
-        <div className="py-16 text-white">
-          <h2 className="text-3xl font-bold text-left mb-8 w-fit">
+        <div className="mt-10 text-white">
+          <h2 className="text-5xl font-bold text-left mb-8 w-fit">
             An Overview
           </h2>
           <div className="space-y-10">
@@ -133,6 +132,120 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Mission and Vision */}
+        <div id="section-container" className="mt-10 ">
+          <h2 className="text-5xl font-bold text-left w-fit">
+            Mission & Vision
+          </h2>
+          <div className="flex flex-col lg:flex-row mt-10 gap-5 ">
+            <div
+              id="mission-container"
+              className="flex flex-col items-start lg:items-center justify-center gap-10 "
+            >
+              <div className="w-full lg:w-3/4">
+                <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+                <p>
+                  At Atlas Studios, our mission is to capture and share the
+                  untold stories of the world through the power of photography.
+                  We strive to create a platform where every image speaks
+                  volumes, connecting people across borders and cultures.
+                </p>
+              </div>
+              <div
+                className="w-1/2 bg-center bg-repeat h-36 mx-auto "
+                style={{ backgroundImage: `url(${jigsaw})` }}
+              ></div>
+            </div>
+            <div
+              id="vision-container"
+              className="flex flex-col items-start lg:items-center justify-center gap-10  "
+            >
+              <div className="w-full lg:w-3/4">
+                <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+                <p>
+                  Our vision is to become the leading global photography agency,
+                  recognized for our unparalleled storytelling and commitment to
+                  making a positive impact. We aim to inspire change, preserve
+                  moments, and foster understanding through the lens of our
+                  cameras.
+                </p>
+              </div>
+              <div
+                className="w-1/2 bg-center bg-repeat h-36 mx-auto "
+                style={{ backgroundImage: `url(${jigsaw})` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Section */}
+        <div className="mt-10">
+          <h2 className="text-3xl font-bold mb-4">Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Team member cards */}
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <img
+                src={foundingTeam}
+                alt="Team Member 1"
+                className="w-full h-auto mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-gray-400">Founder & CEO</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <img
+                src={foundingTeam}
+                alt="Team Member 1"
+                className="w-full h-auto mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-gray-400">Founder & CEO</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <img
+                src={foundingTeam}
+                alt="Team Member 1"
+                className="w-full h-auto mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-gray-400">Founder & CEO</p>
+            </div>
+            {/* Add more team member cards */}
+          </div>
+        </div>
+        {/* Values and Culture */}
+        <div className="mt-10">
+          <h2 className="text-3xl font-bold mb-4">Our Values</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              Authenticity: We believe in the power of genuine storytelling.
+            </li>
+            <li>
+              Creativity: We embrace innovation and push the boundaries of
+              visual narratives.
+            </li>
+            <li>
+              Collaboration: We foster a culture of teamwork and value diverse
+              perspectives.
+            </li>
+            <li>
+              Impact: We strive to make a positive difference through our work.
+            </li>
+          </ul>
+        </div>
+        {/* Call-to-Action */}
+        <div className="mt-10 text-center">
+          <p className="text-xl mb-4">
+            Ready to embark on a visual journey with us?
+          </p>
+          <a
+            href="/services"
+            className="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300"
+          >
+            Explore Our Services
+          </a>
         </div>
       </div>
     </div>
