@@ -137,7 +137,6 @@ export default function AboutPage() {
               backgroundAttachment: "fixed",
             }}
           >
-            <div className="absolute inset-0 debug"></div>
             <Card
               title="Authenticity"
               description="We believe in the power of genuine storytelling."
@@ -166,24 +165,25 @@ export default function AboutPage() {
           <h3 className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0">
             Our Team
           </h3>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team member cards */}
-            <TeamMemberCard
-              name="Jacob Smith"
-              role="Creative Director"
-              img={tony}
-            />{" "}
-            <TeamMemberCard
-              name="Carol Jones"
-              role="Photography Manager"
-              img={carol}
-            />
-            <TeamMemberCard
-              name="George Robbins"
-              role="Marketing and Communications Specialist"
-              img={george}
-            />
-            {/* Add more team member cards */}
+          <div className="mt-10 flex justify-center">
+            <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 ">
+              {/* Team member cards */}
+              <TeamMemberCard
+                name="Jacob Smith"
+                role="Creative Director"
+                img={tony}
+              />{" "}
+              <TeamMemberCard
+                name="Carol Jones"
+                role="Photography Manager"
+                img={carol}
+              />
+              <TeamMemberCard
+                name="George Robbins"
+                role="Marketing Specialist"
+                img={george}
+              />
+            </div>
           </div>
         </div>
 

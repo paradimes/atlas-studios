@@ -13,8 +13,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, role, img }) => {
         alt="Team Member 1"
         className="max-h-[50vh] mb-4 rounded-lg"
       />
-      <h3 className="text-xl font-bold">{name}</h3>
-      <p className="text-gray-400">{role}</p>
+      <h3 className="text-xl font-bold text-center">{name}</h3>
+      <p className="text-gray-400 text-center">{role}</p>
     </div>
   );
 };
