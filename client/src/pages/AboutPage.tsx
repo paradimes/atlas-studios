@@ -33,7 +33,6 @@ export default function AboutPage() {
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Overlay div, darkens the bg image and serves as the container to center the text */}
           <div className="absolute inset-0 flex items-center justify-center ">
             <blockquote className="mt-6 border-l-2 italic text-white text-4xl md:text-5xl font-light px-4 text-center w-[40vw]">
               "Seeing the world through a lens, I found my vision."

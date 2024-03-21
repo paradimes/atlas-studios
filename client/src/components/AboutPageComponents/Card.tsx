@@ -10,7 +10,7 @@ export default function Card({ title, description, img }: CardProps) {
       className={`flex flex-col col-span-1 items-start lg:items-center justify-between w-full h-full`}
     >
       <div className="w-full flex flex-col">
-        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-4">
+        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-2">
           {title}
         </h3>
         <p className="flex-1 text-sm leading-7">{description}</p>
