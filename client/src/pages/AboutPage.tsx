@@ -11,6 +11,8 @@ import TeamMemberCard from "../components/AboutPageComponents/TeamMemberCard";
 import carol from "../assets/aboutImages/carol.jpeg";
 import tony from "../assets/aboutImages/tony.jpeg";
 import george from "../assets/aboutImages/george.jpeg";
+import { Link } from "react-router-dom";
+// import arrow from "../assets/icons/arrow.svg";
 
 export default function AboutPage() {
   return (
@@ -188,16 +190,42 @@ export default function AboutPage() {
         </div>
 
         {/* Call-to-Action */}
-        <div className="mt-10 text-center">
-          <p className="text-xl mb-4">
-            Ready to embark on a visual journey with us?
+        <div className="mt-20 mb-5 text-center flex flex-col items-center justify-center">
+          <p className="text-4xl mb-10">
+            Are you ready to embark on a{" "}
+            <span className="italic font-semibold bg-gradient-to-r from-orange-400 to-red-600 hover:from-[#7525ff] hover:to-[#ff00d0] inline-block text-transparent bg-clip-text">
+              visual journey
+            </span>{" "}
+            with us?
           </p>
-          <a
-            href="/services"
-            className="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300"
+          <Link
+            to={"/services"}
+            className="text-xl transition duration-300 border-2 border-white bg-black hover:bg-white hover:text-black flex flex-row items-center justify-center gap-4 px-6 py-4 rounded-full"
           >
             Explore Our Services
-          </a>
+            <div className="svg-icon">
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="fill-current text-black hover:text-orange-500"
+              >
+                <rect
+                  width="20"
+                  height="20"
+                  rx="10"
+                  transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 20.5)"
+                  fill="currentColor"
+                />
+                <path
+                  d="M13.5 7.5C13.5 7.22386 13.2761 7 13 7L8.5 7C8.22386 7 8 7.22386 8 7.5C8 7.77614 8.22386 8 8.5 8H12.5V12C12.5 12.2761 12.7239 12.5 13 12.5C13.2761 12.5 13.5 12.2761 13.5 12L13.5 7.5ZM7.35355 13.8536L13.3536 7.85355L12.6464 7.14645L6.64645 13.1464L7.35355 13.8536Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
