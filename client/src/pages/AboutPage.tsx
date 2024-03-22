@@ -116,7 +116,6 @@ export default function AboutPage() {
                   untold stories of the world through the power of photography.
                   We strive to create a platform where every image speaks
                   volumes, connecting people across borders and cultures."
-              // img={jigsaw}
               icon={<GoGoal size={100} />}
             />
             <Card

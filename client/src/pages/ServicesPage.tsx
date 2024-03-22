@@ -15,12 +15,12 @@ export default function ServicesPage() {
           For You
         </h1>
         <NavBar />
-        <div id="body" className="mt-10  w-full">
+        <div id="body" className="mt-10 w-full">
           {/* Hero Section */}
           {/* BG holder and relative positiong context for its children */}
           <div
             id="hero"
-            className="relative bg-center h-[40vh] mt-10"
+            className="relative  bg-center h-[40vh] mt-10"
             style={{
               backgroundImage: `url(${jigsaw})`,
               backgroundAttachment: "fixed",
