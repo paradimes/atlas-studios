@@ -13,7 +13,7 @@ export default function ServicesCard({
 }: ServicesCardProps) {
   return (
     <div
-      className={`flex flex-row col-span-1 items-start justify-between w-full h-full max-w-[50vh] py-3 px-6 border-l-2 xl:first:border-l-0 border-neutral-800 `}
+      className={`flex flex-row col-span-1 items-start justify-between w-full h-full py-3 px-6 border-l-2 xl:first:border-l-0 border-neutral-800 `}
     >
       <div className="h-full flex items-center justify-center mr-6 text-4xl text-white">
         {icon}
