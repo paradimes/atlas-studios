@@ -1,7 +1,8 @@
 import NavBar from "../components/NavBar";
-import { FaCamera, FaImage, FaVideo, FaObjectGroup } from "react-icons/fa";
+import { FaCamera, FaImage, FaVideo } from "react-icons/fa";
 import ServicesCard from "../components/ServicesCard";
 import jigsaw from "../assets/design/jigsaw.svg";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 export default function ServicesPage() {
   return (
@@ -17,7 +18,7 @@ export default function ServicesPage() {
           {/* BG holder and relative positiong context for its children */}
           <div
             id="hero"
-            className="relative bg-center h-[25vh] mt-10"
+            className="relative bg-center h-[40vh] mt-10"
             style={{
               backgroundImage: `url(${jigsaw})`,
               backgroundAttachment: "fixed",
@@ -57,7 +58,7 @@ export default function ServicesPage() {
               <ServicesCard
                 title="Custom Projects"
                 description="Have a unique photography need? We're here to help. Our team is experienced in tackling custom projects of all sizes and scopes. Contact us to discuss your specific requirements, and we'll develop a tailored solution to meet your goals."
-                icon={<FaObjectGroup />}
+                icon={<MdOutlineDashboardCustomize />}
               />
             </div>
           </div>

@@ -4,7 +4,6 @@ import foundingTeam from "../assets/aboutImages/foundingTeam.png";
 import future from "../assets/aboutImages/future.jpeg";
 import tokyo from "../assets/aboutImages/tokyo.jpeg";
 import topography from "../assets/design/topography.svg";
-import jigsaw from "../assets/design/jigsaw.svg";
 import OverviewCard from "../components/AboutPageComponents/OverviewCard";
 import Card from "../components/AboutPageComponents/Card";
 import TeamMemberCard from "../components/AboutPageComponents/TeamMemberCard";
@@ -12,7 +11,10 @@ import carol from "../assets/aboutImages/carol.jpeg";
 import tony from "../assets/aboutImages/tony.jpeg";
 import george from "../assets/aboutImages/george.jpeg";
 import { Link } from "react-router-dom";
-// import arrow from "../assets/icons/arrow.svg";
+import { GoGoal } from "react-icons/go";
+import { FaEye, FaUsers, FaRegLightbulb } from "react-icons/fa";
+import { PiHandHeart } from "react-icons/pi";
+import { IoRocketOutline } from "react-icons/io5";
 
 export default function AboutPage() {
   return (
@@ -112,7 +114,8 @@ export default function AboutPage() {
                   untold stories of the world through the power of photography.
                   We strive to create a platform where every image speaks
                   volumes, connecting people across borders and cultures."
-              img={jigsaw}
+              // img={jigsaw}
+              icon={<GoGoal size={100} />}
             />
             <Card
               title="Our Vision"
@@ -121,7 +124,7 @@ export default function AboutPage() {
                   making a positive impact. We aim to inspire change, preserve
                   moments, and foster understanding through the lens of our
                   cameras."
-              img={jigsaw}
+              icon={<FaEye size={100} />}
             />
           </div>
         </div>
@@ -141,22 +144,22 @@ export default function AboutPage() {
             <Card
               title="Authenticity"
               description="We believe in the power of genuine storytelling."
-              img={jigsaw}
+              icon={<PiHandHeart size={100} />}
             />
             <Card
               title="Creativity"
               description="We embrace innovation and push the boundaries of visual narratives."
-              img={jigsaw}
+              icon={<FaRegLightbulb size={100} />}
             />
             <Card
               title="Collaboration"
               description=" We foster a culture of teamwork and value diverse perspectives."
-              img={jigsaw}
+              icon={<FaUsers size={100} />}
             />
             <Card
               title="Impact"
               description="We strive to make a positive difference through our work."
-              img={jigsaw}
+              icon={<IoRocketOutline size={100} />}
             />
           </div>
         </div>
