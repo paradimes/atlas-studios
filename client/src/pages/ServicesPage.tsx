@@ -11,7 +11,9 @@ export default function ServicesPage() {
       className="bg-black text-white min-h-screen break-words w-full"
     >
       <div id="content-container" className="p-10 flex flex-col">
-        <h1 className="text-[208px] leading-none font-bold">For You</h1>
+        <h1 className="text-[170px] md:text-[208px]  leading-none font-bold">
+          For&nbsp;You
+        </h1>
         <NavBar />
         <div id="body" className="mt-10  w-full">
           {/* Hero Section */}

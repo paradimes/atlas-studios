@@ -23,7 +23,9 @@ export default function AboutPage() {
       className="bg-black text-white min-h-screen break-words w-full"
     >
       <div id="content-container" className="p-10 flex flex-col">
-        <h1 className="text-[208px] leading-none font-bold">Our Story</h1>
+        <h1 className="text-[170px] md:text-[208px] leading-none font-bold">
+          Our&nbsp;Story
+        </h1>
         <NavBar />
         {/* Hero Section */}
         {/* BG holder and relative positiong context for its children */}

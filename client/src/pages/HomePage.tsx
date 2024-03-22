@@ -8,7 +8,9 @@ export default function HomePage() {
       className="bg-black text-white min-h-screen break-words w-full"
     >
       <div id="content-container" className="p-10 flex flex-col">
-        <h1 className="text-[208px] leading-none font-bold">Atlas/Studios</h1>
+        <h1 className="text-[170px] md:text-[208px] leading-none font-bold">
+          Atlas/Studios
+        </h1>
         <NavBar />
         <section
           id="heading-and-body"
