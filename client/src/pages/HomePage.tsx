@@ -14,9 +14,9 @@ export default function HomePage() {
         <NavBar />
         <section
           id="heading-and-body"
-          className="mt-[70px] flex flex-row gap-20"
+          className="mt-[70px] flex flex-col min-[400px]:flex-row gap-10 min-[400px]:gap-20"
         >
-          <p className="w-[50vw] italic mt-auto">
+          <p className="w-full min-[400px]:w-[50vw] italic mt-auto">
             At Atlas, we believe in more than just capturing images; we believe
             in creating a portal to the wonders that thrive in the hidden
             corners of the Earth. Our team of world-renowned photographers
@@ -25,7 +25,7 @@ export default function HomePage() {
           </p>
           <div
             id="heading"
-            className="flex flex-col items-end justify-end w-[50vw]"
+            className="flex flex-col items-end justify-end w-full min-[400px]:w-[50vw] "
           >
             <h3 className="w-fit font-medium italic text-5xl text-end">
               Unveiling

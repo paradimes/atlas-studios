@@ -63,7 +63,7 @@ export default function GalleryPage() {
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[170px] md:text-[208px]  leading-none font-bold">
-          Our&nbsp;Work
+          Our Work
         </h1>
         <NavBar />
         <div

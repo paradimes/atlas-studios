@@ -12,7 +12,7 @@ export default function ServicesPage() {
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[170px] md:text-[208px]  leading-none font-bold">
-          For&nbsp;You
+          For You
         </h1>
         <NavBar />
         <div id="body" className="mt-10  w-full">

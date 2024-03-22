@@ -24,7 +24,7 @@ export default function AboutPage() {
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[170px] md:text-[208px] leading-none font-bold">
-          Our&nbsp;Story
+          Our Story
         </h1>
         <NavBar />
         {/* Hero Section */}
@@ -133,7 +133,7 @@ export default function AboutPage() {
 
         {/* Values and Culture */}
         <div className="mt-10">
-          <h3 className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0">
+          <h3 className="w-fit font-medium text-5xl mt-10 first:mt-0 scroll-m-20 pb-2 tracking-tight transition-colors ">
             Our Values
           </h3>
           <div

@@ -9,7 +9,7 @@ export default function ContactPage() {
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[170px] md:text-[208px] leading-none font-bold">
-          Get&nbsp;In&nbsp;Touch
+          Get In Touch
         </h1>
         <NavBar />
         <ContactForm />
