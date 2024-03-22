@@ -1,15 +1,6 @@
-// import jigsaw from "../assets/design/jigsaw.svg";
-
 export default function ServicesHero() {
   return (
-    <div
-      id="hero"
-      className="relative  bg-center h-[40vh] mt-10"
-      //   style={{
-      //     backgroundImage: `url(${jigsaw})`,
-      //     backgroundAttachment: "fixed",
-      //   }}
-    >
+    <div id="hero" className="relative  bg-center h-[40vh] mt-10">
       <div className="absolute inset-0 flex items-center justify-center">
         <h3 className="mt-6 text-4xl md:text-5xl  text-center max-w-[40vw]  shadow-inner shadow-neutral-700 px-8 py-4 bg-black rounded-3xl font-medium">
           Take the{" "}
