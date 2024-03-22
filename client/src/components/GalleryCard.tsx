@@ -8,8 +8,8 @@ type GalleryCardProps = {
 
 export default function GalleryCard({
   title,
-  description,
-  photographer,
+  // description,
+  // photographer,
   img,
 }: GalleryCardProps) {
   return (
