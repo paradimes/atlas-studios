@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
 import { FaCamera, FaImage, FaVideo } from "react-icons/fa";
 import ServicesCard from "../components/ServicesCard";
-import jigsaw from "../assets/design/jigsaw.svg";
+import jigsaw from "../../public/jigsaw.svg";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 export default function ServicesPage() {
