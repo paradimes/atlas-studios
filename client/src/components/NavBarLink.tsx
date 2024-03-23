@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 type NavBarLinkProps = {
@@ -6,7 +7,11 @@ type NavBarLinkProps = {
 };
 export default function NavBarLink({ title, path }: NavBarLinkProps) {
   return (
-    <span className="hover:text-orange-200 cursor-pointer">
+    <motion.span
+      className="hover:text-orange-200 cursor-pointer"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
       <NavLink
         to={path}
         className={({ isActive }) =>
@@ -17,6 +22,6 @@ export default function NavBarLink({ title, path }: NavBarLinkProps) {
       >
         {title}
       </NavLink>
-    </span>
+    </motion.span>
   );
 }

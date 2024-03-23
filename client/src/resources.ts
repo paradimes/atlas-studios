@@ -14,7 +14,14 @@ import holyMountain from "./assets/images/HOLY_MOUNTAIN_SIMON_NORFOLK.png";
 import scaredStrands from "./assets/images/SACRED_STRANDS_ROBB_KENDRICK.png";
 import fiveColoredPond from "./assets/images/FIVE_COLORED_POND_AMI_VITALE.png";
 
-export const galleryArray = [
+export type GalleryItem = {
+  title: string;
+  description: string;
+  photographer: string;
+  img: string;
+};
+
+export const galleryArray: GalleryItem[] = [
   {
     title: "BROMELIAD SPIDER",
     description:

@@ -3,12 +3,16 @@ import { FaCamera, FaImage, FaVideo } from "react-icons/fa";
 import ServicesCard from "../components/ServicesCard";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import ServicesHero from "@/components/ServicesHero";
+import { motion } from "framer-motion";
 
 export default function ServicesPage() {
   return (
-    <div
+    <motion.div
       id="page-container"
       className="bg-black text-white min-h-screen break-words w-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <div id="content-container" className="p-10 flex flex-col">
         <h1 className="text-[170px] md:text-[208px]  leading-none font-bold">
@@ -49,6 +53,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
