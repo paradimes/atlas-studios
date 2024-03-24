@@ -15,6 +15,7 @@ import { GoGoal } from "react-icons/go";
 import { FaEye, FaUsers, FaRegLightbulb } from "react-icons/fa";
 import { PiHandHeart } from "react-icons/pi";
 import { IoRocketOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
@@ -23,9 +24,14 @@ export default function AboutPage() {
       className="bg-black text-white min-h-screen break-words w-full"
     >
       <div id="content-container" className="p-10 flex flex-col">
-        <h1 className="text-[170px] md:text-[208px] leading-none font-bold">
+        <motion.h1
+          className="text-[170px] md:text-[208px] leading-none font-bold"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Our Story
-        </h1>
+        </motion.h1>
         <NavBar />
         {/* Hero Section */}
         {/* BG holder and relative positiong context for its children */}
@@ -38,16 +44,28 @@ export default function AboutPage() {
           }}
         >
           <div className="absolute inset-0 flex items-center justify-center ">
-            <blockquote className="mt-6 border-l-2 italic text-white text-4xl md:text-5xl font-light px-4 text-center w-[40vw]">
+            <motion.blockquote
+              className="mt-6 border-l-2 italic text-white text-4xl md:text-5xl font-light px-4 text-center w-[40vw]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
               "Seeing the world through a lens, I found my vision."
-            </blockquote>
+            </motion.blockquote>
           </div>
         </div>
         {/* Our Story Section */}
         <div className="mt-10 text-white">
-          <h3 className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0">
+          <motion.h3
+            className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0"
+            initial={{ opacity: 0, x: 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             An Overview
-          </h3>
+          </motion.h3>
           <div className="space-y-10 mt-6">
             {/* Story Block 1 */}
             <OverviewCard
@@ -106,9 +124,15 @@ export default function AboutPage() {
 
         {/* Mission and Vision */}
         <div id="section-container" className="mt-10 ">
-          <h3 className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0">
+          <motion.h3
+            className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0"
+            initial={{ opacity: 0, x: 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Mission & Vision
-          </h3>
+          </motion.h3>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
             <Card
               title="Our Mission"
@@ -132,9 +156,15 @@ export default function AboutPage() {
 
         {/* Values and Culture */}
         <div className="mt-10">
-          <h3 className="w-fit font-medium text-5xl mt-10 first:mt-0 scroll-m-20 pb-2 tracking-tight transition-colors ">
+          <motion.h3
+            className="w-fit font-medium text-5xl mt-10 first:mt-0 scroll-m-20 pb-2 tracking-tight transition-colors"
+            initial={{ opacity: 0, x: 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Our Values
-          </h3>
+          </motion.h3>
           <div
             className={`mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-cover p-4`}
             style={{
@@ -167,9 +197,15 @@ export default function AboutPage() {
 
         {/* Team Section */}
         <div className="mt-10">
-          <h3 className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0">
+          <motion.h3
+            className="w-fit font-medium text-5xl mt-10 scroll-m-20 pb-2 tracking-tight transition-colors first:mt-0"
+            initial={{ opacity: 0, x: 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Our Team
-          </h3>
+          </motion.h3>
           <div className="mt-10 flex justify-center">
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 ">
               {/* Team member cards */}
@@ -194,41 +230,60 @@ export default function AboutPage() {
 
         {/* Call-to-Action */}
         <div className="mt-20 mb-5 text-center flex flex-col items-center justify-center">
-          <p className="text-4xl mb-10">
-            Are you ready to embark on a{" "}
-            <span className="italic font-semibold bg-gradient-to-r from-orange-400 to-red-600 hover:from-[#7525ff] hover:to-[#ff00d0] inline-block text-transparent bg-clip-text">
-              visual journey
-            </span>{" "}
-            with us?
-          </p>
-          <Link
-            to={"/services"}
-            className="text-xl transition duration-300 border-2 border-white bg-black hover:bg-white hover:text-black flex flex-row items-center justify-center gap-4 px-6 py-4 rounded-full"
+          <motion.p
+            className="text-4xl mb-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.2 }}
           >
-            Explore Our Services
-            <div className="svg-icon">
-              <svg
-                width="20"
-                height="21"
-                viewBox="0 0 20 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="fill-current text-black hover:text-orange-500"
-              >
-                <rect
+            Are you ready to embark on a{" "}
+            <motion.span
+              className="italic font-semibold bg-gradient-to-r from-orange-400 to-red-600 hover:from-[#7525ff] hover:to-[#ff00d0] inline-block text-transparent bg-clip-text"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+            >
+              visual journey
+            </motion.span>{" "}
+            with us?
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+          >
+            <Link
+              to={"/services"}
+              className="text-xl transition duration-300 border-2 border-white bg-black hover:bg-white hover:text-black flex flex-row items-center justify-center gap-4 px-6 py-4 rounded-full"
+            >
+              Explore Our Services
+              <div className="svg-icon">
+                <svg
                   width="20"
-                  height="20"
-                  rx="10"
-                  transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 20.5)"
-                  fill="currentColor"
-                />
-                <path
-                  d="M13.5 7.5C13.5 7.22386 13.2761 7 13 7L8.5 7C8.22386 7 8 7.22386 8 7.5C8 7.77614 8.22386 8 8.5 8H12.5V12C12.5 12.2761 12.7239 12.5 13 12.5C13.2761 12.5 13.5 12.2761 13.5 12L13.5 7.5ZM7.35355 13.8536L13.3536 7.85355L12.6464 7.14645L6.64645 13.1464L7.35355 13.8536Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-          </Link>
+                  height="21"
+                  viewBox="0 0 20 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="fill-current text-black hover:text-orange-500"
+                >
+                  <rect
+                    width="20"
+                    height="20"
+                    rx="10"
+                    transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 20.5)"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M13.5 7.5C13.5 7.22386 13.2761 7 13 7L8.5 7C8.22386 7 8 7.22386 8 7.5C8 7.77614 8.22386 8 8.5 8H12.5V12C12.5 12.2761 12.7239 12.5 13 12.5C13.2761 12.5 13.5 12.2761 13.5 12L13.5 7.5ZM7.35355 13.8536L13.3536 7.85355L12.6464 7.14645L6.64645 13.1464L7.35355 13.8536Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>
