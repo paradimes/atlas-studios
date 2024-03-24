@@ -89,7 +89,7 @@ export default function GalleryPage() {
               }}
               whileHover={{
                 scale: 0.95,
-                transition: { duration: 0.2 },
+                transition: { duration: 0.1 },
               }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex flex-col justify-end overflow-hidden">
@@ -104,8 +104,8 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {isLightboxOpen && currentIndex !== null && (
-          <AnimatePresence onExitComplete={() => setCurrentIndex(null)}>
+        <AnimatePresence onExitComplete={() => setCurrentIndex(null)}>
+          {isLightboxOpen && currentIndex !== null && (
             <motion.div
               id="lightbox"
               className="fixed inset-0 bg-black bg-opacity-80 flex flex-col xl:flex-row justify-center items-center gap-5 p-10"
@@ -113,7 +113,6 @@ export default function GalleryPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.3 } }}
               exit={{ opacity: 0, transition: { duration: 0.3 } }}
-              // transition={{ duration: 0.3 }}
             >
               <AnimatePresence mode="wait">
                 <motion.img
@@ -126,63 +125,64 @@ export default function GalleryPage() {
                   exit={{ opacity: 0, x: -250 }}
                   transition={{ duration: 0.3 }}
                 />
-              </AnimatePresence>
-              <div className="text-left flex flex-col">
-                <motion.h2
-                  className="text-xl font-bold"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.3 }}
-                >
-                  {galleryArray[currentIndex].title}
-                </motion.h2>
-                <motion.p
-                  className="mt-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
-                  {galleryArray[currentIndex].description}
-                </motion.p>
-                <motion.p
-                  className="mt-2 italic font-extralight"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.7 }}
-                >
-                  {galleryArray[currentIndex].photographer}
-                </motion.p>
-                <div
-                  id="navigation-buttons"
-                  className="flex items-center justify-center gap-5 mt-5"
-                >
-                  <motion.button
-                    disabled={currentIndex <= 0}
-                    className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
-                    onClick={handlePreviousButton}
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -50, opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 0.9 }}
+                <div className="text-left flex flex-col">
+                  <motion.h2
+                    className="text-xl font-bold"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.3 }}
                   >
-                    Previous
-                  </motion.button>
-                  <motion.button
-                    disabled={currentIndex >= galleryArray.length - 1}
-                    className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
-                    onClick={handleNextButton}
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: 50, opacity: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
+                    {galleryArray[currentIndex].title}
+                  </motion.h2>
+                  <motion.p
+                    className="mt-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
                   >
-                    Next
-                  </motion.button>
+                    {galleryArray[currentIndex].description}
+                  </motion.p>
+                  <motion.p
+                    className="mt-2 italic font-extralight"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.7 }}
+                  >
+                    {galleryArray[currentIndex].photographer}
+                  </motion.p>
+
+                  <div
+                    id="navigation-buttons"
+                    className="flex items-center justify-center gap-5 mt-5"
+                  >
+                    <motion.button
+                      disabled={currentIndex <= 0}
+                      className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
+                      onClick={handlePreviousButton}
+                      initial={{ x: -50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -50, opacity: 0 }}
+                      transition={{ duration: 0.3, delay: 0.9 }}
+                    >
+                      Previous
+                    </motion.button>
+                    <motion.button
+                      disabled={currentIndex >= galleryArray.length - 1}
+                      className="px-4 py-2 rounded-full border-2 border-white hover:border-orange-500 hover:text-orange-500 disabled:border-stone-700 disabled:text-stone-700"
+                      onClick={handleNextButton}
+                      initial={{ x: 50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 50, opacity: 0 }}
+                      transition={{ duration: 0.5, delay: 0.9 }}
+                    >
+                      Next
+                    </motion.button>
+                  </div>
                 </div>
-              </div>
+              </AnimatePresence>
             </motion.div>
-          </AnimatePresence>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
