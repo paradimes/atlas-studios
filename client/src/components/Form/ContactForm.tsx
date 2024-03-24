@@ -122,13 +122,15 @@ export default function ContactForm() {
           )}
         />
 
-        <button
+        <motion.button
           title="Submit"
           type="submit"
           className="flex bg-neutral-700 hover:bg-neutral-500 bg-opacity-60 px-6 py-2 rounded-full w-fit"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
           Submit
-        </button>
+        </motion.button>
       </motion.form>
     </Form>
   );
