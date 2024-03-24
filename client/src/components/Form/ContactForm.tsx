@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -41,9 +42,12 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
+      <motion.form
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 mt-10 flex flex-col"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
       >
         <div className="flex flex-col sm:flex-row gap-10">
           <FormField
@@ -125,7 +129,7 @@ export default function ContactForm() {
         >
           Submit
         </button>
-      </form>
+      </motion.form>
     </Form>
   );
 }

@@ -12,10 +12,10 @@ import tony from "../assets/aboutImages/tony.jpeg";
 import george from "../assets/aboutImages/george.jpeg";
 import { Link } from "react-router-dom";
 import { GoGoal } from "react-icons/go";
-import { FaEye, FaUsers, FaRegLightbulb } from "react-icons/fa";
-import { PiHandHeart } from "react-icons/pi";
-import { IoRocketOutline } from "react-icons/io5";
+import { FaEye } from "react-icons/fa";
+
 import { motion } from "framer-motion";
+import { valueCardArray } from "@/resources";
 
 export default function AboutPage() {
   return (
@@ -172,26 +172,15 @@ export default function AboutPage() {
               backgroundAttachment: "fixed",
             }}
           >
-            <Card
-              title="Authenticity"
-              description="We believe in the power of genuine storytelling."
-              icon={<PiHandHeart size={100} />}
-            />
-            <Card
-              title="Creativity"
-              description="We embrace innovation and push the boundaries of visual narratives."
-              icon={<FaRegLightbulb size={100} />}
-            />
-            <Card
-              title="Collaboration"
-              description=" We foster a culture of teamwork and value diverse perspectives."
-              icon={<FaUsers size={100} />}
-            />
-            <Card
-              title="Impact"
-              description="We strive to make a positive difference through our work."
-              icon={<IoRocketOutline size={100} />}
-            />
+            {valueCardArray.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+                delay={index * 0.2}
+              />
+            ))}
           </div>
         </div>
 

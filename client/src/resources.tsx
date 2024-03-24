@@ -13,6 +13,17 @@ import panamaCattle from "./assets/images/PANAMA_CATTLE_BRUCE_DALE.png";
 import holyMountain from "./assets/images/HOLY_MOUNTAIN_SIMON_NORFOLK.png";
 import scaredStrands from "./assets/images/SACRED_STRANDS_ROBB_KENDRICK.png";
 import fiveColoredPond from "./assets/images/FIVE_COLORED_POND_AMI_VITALE.png";
+import {
+  FaUsers,
+  FaRegLightbulb,
+  FaCamera,
+  FaImage,
+  FaVideo,
+} from "react-icons/fa";
+import { PiHandHeart } from "react-icons/pi";
+import { IoRocketOutline } from "react-icons/io5";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { ReactElement } from "react";
 
 export type GalleryItem = {
   title: string;
@@ -126,5 +137,69 @@ export const galleryArray: GalleryItem[] = [
       "Jiuzhaigou National Park in Sichuan Province, China, is home to many beautiful lakes and waterfalls, including this one, known as Five-Colored Pond.",
     photographer: "PHOTOGRAPH BY AMI VITALE",
     img: fiveColoredPond,
+  },
+];
+
+type ValueCard = {
+  title: string;
+  description: string;
+  icon: ReactElement;
+};
+
+export const valueCardArray: ValueCard[] = [
+  {
+    title: "Authenticity",
+    description: "We believe in the power of genuine storytelling.",
+    icon: <PiHandHeart size={100} />,
+  },
+  {
+    title: "Creativity",
+    description:
+      "We embrace innovation and push the boundaries of visual narratives.",
+    icon: <FaRegLightbulb size={100} />,
+  },
+  {
+    title: "Collaboration",
+    description:
+      "We foster a culture of teamwork and value diverse perspectives.",
+    icon: <FaUsers size={100} />,
+  },
+  {
+    title: "Impact",
+    description: "We strive to make a positive difference through our work.",
+    icon: <IoRocketOutline size={100} />,
+  },
+];
+
+type ServiceCard = {
+  title: string;
+  description: string;
+  icon: ReactElement;
+};
+
+export const serviceCardArray: ServiceCard[] = [
+  {
+    title: "Product Photography",
+    description:
+      "Showcase your products in the best light with our professional product photography services. From simple white background shots to creative lifestyle images, we'll help you create visuals that sell.",
+    icon: <FaCamera />,
+  },
+  {
+    title: "Lifestyle Photography",
+    description:
+      "Bring your brand to life with authentic, engaging lifestyle photography. We'll capture images that showcase your products or services in real-world settings, connecting with your target audience on an emotional level.",
+    icon: <FaImage />,
+  },
+  {
+    title: "Corporate Photography",
+    description:
+      "From headshots to event coverage, our corporate photography services help you build a strong, professional brand image. We'll work with you to capture the essence of your company and its people.",
+    icon: <FaVideo />,
+  },
+  {
+    title: "Custom Projects",
+    description:
+      "Have a unique photography need? We're here to help. Our team is experienced in tackling custom projects of all sizes and scopes. Contact us to discuss your specific requirements, and we'll develop a tailored solution to meet your goals.",
+    icon: <MdOutlineDashboardCustomize />,
   },
 ];
